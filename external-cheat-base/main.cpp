@@ -1,27 +1,15 @@
-#include "renderer/renderer.h"
+#include "cheats/aimbot.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     LPSTR lpCmdLine, int nCmdShow)
 {
+    aimbot::procID = memory::GetProcID(L"cs2.exe");
+    aimbot::moduleBase = memory::GetModuleBaseAddress(aimbot::procID, L"client.dll");
 
-    HWND hwnd = window::InitWindow(hInstance);
-    if (!hwnd) return -1;
-    
-    if (!renderer::init(hwnd))
-    {
-        renderer::destroy();
-        return -1;
+    while (true) {
+        if (GetAsyncKeyState(VK_LSHIFT)) {
+            aimbot::frame();
+        }
     }
-
-    while (!GetAsyncKeyState(VK_F9)  && renderer::running)
-    {
-        renderer::frame();
-    }
-
-    renderer::destroy();
-    UnregisterClass(L"overlay", hInstance);
-
     return 0;
-
-
 }

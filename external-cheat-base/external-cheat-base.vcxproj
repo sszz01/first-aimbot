@@ -139,11 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="cheats\aimbot.h" />
     <ClInclude Include="math\vector.h" />
     <ClInclude Include="memory\memory.h" />
     <ClInclude Include="renderer\renderer.h" />
+    <ClInclude Include="SDK\client.h" />
+    <ClInclude Include="SDK\offsets.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="cheats\aimbot.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="memory\memory.cpp" />
     <ClCompile Include="renderer\renderer.cpp" />
