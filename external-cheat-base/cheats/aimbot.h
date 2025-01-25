@@ -1,14 +1,16 @@
 #pragma once
 
-#include <../SDK/client.h>
-#include <../SDK/offsets.h>
-#include <../math/vector.h>
-#include <../memory/memory.h>
+#include "../SDK/client.h"
+#include "../SDK/offsets.h"
+#include "../math/vector.h"
+#include "../memory/memory.h"
+#include "../buttons.h"
 
 namespace aimbot {
-	inline uint32_t moduleBase {};
-	inline uint32_t procID{};
+	inline uintptr_t moduleBase {};
+	inline uintptr_t procID{};
 
-	void frame();
 	float distance(vec3 p1, vec3 p2);
+	void frame();
+	void trigger();
 }

@@ -20,8 +20,7 @@ struct vec3
 		return { this->x - other.x, this->y - other.y, this->z - other.z };
 	}
 
-	vec3 RelativeAngle()
-	{
+	vec3 RelativeAngle() {
 		return {
 			std::atan2(-z, std::hypot(x, y)) * (180.0f / std::numbers::pi_v<float>),
 			std::atan2(y, x) * (180.0f / std::numbers::pi_v<float>),

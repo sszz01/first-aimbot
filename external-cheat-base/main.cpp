@@ -7,9 +7,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     aimbot::moduleBase = memory::GetModuleBaseAddress(aimbot::procID, L"client.dll");
 
     while (true) {
-        if (GetAsyncKeyState(VK_LSHIFT)) {
+        aimbot::trigger();
+        if (GetAsyncKeyState(VK_LSHIFT))
             aimbot::frame();
-        }
     }
     return 0;
 }
